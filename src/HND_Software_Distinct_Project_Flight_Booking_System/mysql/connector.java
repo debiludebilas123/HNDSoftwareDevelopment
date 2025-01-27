@@ -1,4 +1,4 @@
-package HND_Software_Distinct_Project.mysql;
+package HND_Software_Distinct_Project_Flight_Booking_System.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

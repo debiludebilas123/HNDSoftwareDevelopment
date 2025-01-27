@@ -1,4 +1,4 @@
-package HND_Software_Distinct_Project;
+package HND_Software_Distinct_Project_Flight_Booking_System;
 
 import java.io.FileWriter;
 

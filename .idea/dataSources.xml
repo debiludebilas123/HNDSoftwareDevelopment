@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="flight@localhost" uuid="c76b0321-0ba1-46bb-a976-d68103e330aa">
+    <data-source source="LOCAL" name="nojus_l_flight_booking@localhost" uuid="c76b0321-0ba1-46bb-a976-d68103e330aa">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://localhost:3306/flight</jdbc-url>
+      <jdbc-url>jdbc:mariadb://localhost:3306/nojus_l_flight_booking</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />

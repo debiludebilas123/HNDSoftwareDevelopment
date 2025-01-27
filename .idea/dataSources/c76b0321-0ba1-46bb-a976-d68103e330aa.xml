@@ -1,229 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="flight@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.53">
+<dataSource name="nojus_l_flight_booking@localhost">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.52">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
-      <Grants>|root||admin1|localhost|ALTER|G
+      <Grants>|root||root||ALTER|G
 |root||root|127.0.0.1|ALTER|G
 |root||root|::1|ALTER|G
+|root||root|desktop-58b7inm|ALTER|G
 |root||root|localhost|ALTER|G
-|root||root|sudogabalas|ALTER|G
-|root||admin1|localhost|ALTER ROUTINE|G
+|root||root||ALTER ROUTINE|G
 |root||root|127.0.0.1|ALTER ROUTINE|G
 |root||root|::1|ALTER ROUTINE|G
+|root||root|desktop-58b7inm|ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
-|root||root|sudogabalas|ALTER ROUTINE|G
-|root||admin1|localhost|BINLOG ADMIN|G
+|root||root||BINLOG ADMIN|G
 |root||root|127.0.0.1|BINLOG ADMIN|G
 |root||root|::1|BINLOG ADMIN|G
+|root||root|desktop-58b7inm|BINLOG ADMIN|G
 |root||root|localhost|BINLOG ADMIN|G
-|root||root|sudogabalas|BINLOG ADMIN|G
-|root||admin1|localhost|BINLOG MONITOR|G
+|root||root||BINLOG MONITOR|G
 |root||root|127.0.0.1|BINLOG MONITOR|G
 |root||root|::1|BINLOG MONITOR|G
+|root||root|desktop-58b7inm|BINLOG MONITOR|G
 |root||root|localhost|BINLOG MONITOR|G
-|root||root|sudogabalas|BINLOG MONITOR|G
-|root||admin1|localhost|BINLOG REPLAY|G
+|root||root||BINLOG REPLAY|G
 |root||root|127.0.0.1|BINLOG REPLAY|G
 |root||root|::1|BINLOG REPLAY|G
+|root||root|desktop-58b7inm|BINLOG REPLAY|G
 |root||root|localhost|BINLOG REPLAY|G
-|root||root|sudogabalas|BINLOG REPLAY|G
-|root||admin1|localhost|CONNECTION ADMIN|G
+|root||root||CONNECTION ADMIN|G
 |root||root|127.0.0.1|CONNECTION ADMIN|G
 |root||root|::1|CONNECTION ADMIN|G
+|root||root|desktop-58b7inm|CONNECTION ADMIN|G
 |root||root|localhost|CONNECTION ADMIN|G
-|root||root|sudogabalas|CONNECTION ADMIN|G
-|root||admin1|localhost|CREATE|G
+|root||root||CREATE|G
 |root||root|127.0.0.1|CREATE|G
 |root||root|::1|CREATE|G
+|root||root|desktop-58b7inm|CREATE|G
 |root||root|localhost|CREATE|G
-|root||root|sudogabalas|CREATE|G
-|root||admin1|localhost|CREATE ROUTINE|G
+|root||root||CREATE ROUTINE|G
 |root||root|127.0.0.1|CREATE ROUTINE|G
 |root||root|::1|CREATE ROUTINE|G
+|root||root|desktop-58b7inm|CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
-|root||root|sudogabalas|CREATE ROUTINE|G
-|root||admin1|localhost|CREATE TABLESPACE|G
+|root||root||CREATE TABLESPACE|G
 |root||root|127.0.0.1|CREATE TABLESPACE|G
 |root||root|::1|CREATE TABLESPACE|G
+|root||root|desktop-58b7inm|CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
-|root||root|sudogabalas|CREATE TABLESPACE|G
-|root||admin1|localhost|CREATE TEMPORARY TABLES|G
+|root||root||CREATE TEMPORARY TABLES|G
 |root||root|127.0.0.1|CREATE TEMPORARY TABLES|G
 |root||root|::1|CREATE TEMPORARY TABLES|G
+|root||root|desktop-58b7inm|CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
-|root||root|sudogabalas|CREATE TEMPORARY TABLES|G
-|root||admin1|localhost|CREATE USER|G
+|root||root||CREATE USER|G
 |root||root|127.0.0.1|CREATE USER|G
 |root||root|::1|CREATE USER|G
+|root||root|desktop-58b7inm|CREATE USER|G
 |root||root|localhost|CREATE USER|G
-|root||root|sudogabalas|CREATE USER|G
-|root||admin1|localhost|CREATE VIEW|G
+|root||root||CREATE VIEW|G
 |root||root|127.0.0.1|CREATE VIEW|G
 |root||root|::1|CREATE VIEW|G
+|root||root|desktop-58b7inm|CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
-|root||root|sudogabalas|CREATE VIEW|G
-|root||admin1|localhost|DELETE|G
+|root||root||DELETE|G
 |root||root|127.0.0.1|DELETE|G
 |root||root|::1|DELETE|G
+|root||root|desktop-58b7inm|DELETE|G
 |root||root|localhost|DELETE|G
-|root||root|sudogabalas|DELETE|G
-|root||admin1|localhost|DELETE HISTORY|G
+|root||root||DELETE HISTORY|G
 |root||root|127.0.0.1|DELETE HISTORY|G
 |root||root|::1|DELETE HISTORY|G
+|root||root|desktop-58b7inm|DELETE HISTORY|G
 |root||root|localhost|DELETE HISTORY|G
-|root||root|sudogabalas|DELETE HISTORY|G
-|root||admin1|localhost|DROP|G
+|root||root||DROP|G
 |root||root|127.0.0.1|DROP|G
 |root||root|::1|DROP|G
+|root||root|desktop-58b7inm|DROP|G
 |root||root|localhost|DROP|G
-|root||root|sudogabalas|DROP|G
-|root||admin1|localhost|EVENT|G
+|root||root||EVENT|G
 |root||root|127.0.0.1|EVENT|G
 |root||root|::1|EVENT|G
+|root||root|desktop-58b7inm|EVENT|G
 |root||root|localhost|EVENT|G
-|root||root|sudogabalas|EVENT|G
-|root||admin1|localhost|EXECUTE|G
+|root||root||EXECUTE|G
 |root||root|127.0.0.1|EXECUTE|G
 |root||root|::1|EXECUTE|G
+|root||root|desktop-58b7inm|EXECUTE|G
 |root||root|localhost|EXECUTE|G
-|root||root|sudogabalas|EXECUTE|G
-|root||admin1|localhost|FEDERATED ADMIN|G
+|root||root||FEDERATED ADMIN|G
 |root||root|127.0.0.1|FEDERATED ADMIN|G
 |root||root|::1|FEDERATED ADMIN|G
+|root||root|desktop-58b7inm|FEDERATED ADMIN|G
 |root||root|localhost|FEDERATED ADMIN|G
-|root||root|sudogabalas|FEDERATED ADMIN|G
-|root||admin1|localhost|FILE|G
+|root||root||FILE|G
 |root||root|127.0.0.1|FILE|G
 |root||root|::1|FILE|G
+|root||root|desktop-58b7inm|FILE|G
 |root||root|localhost|FILE|G
-|root||root|sudogabalas|FILE|G
-|root||admin1|localhost|INDEX|G
+|root||root||INDEX|G
 |root||root|127.0.0.1|INDEX|G
 |root||root|::1|INDEX|G
+|root||root|desktop-58b7inm|INDEX|G
 |root||root|localhost|INDEX|G
-|root||root|sudogabalas|INDEX|G
-|root||admin1|localhost|INSERT|G
+|root||root||INSERT|G
 |root||root|127.0.0.1|INSERT|G
 |root||root|::1|INSERT|G
+|root||root|desktop-58b7inm|INSERT|G
 |root||root|localhost|INSERT|G
-|root||root|sudogabalas|INSERT|G
-|root||admin1|localhost|LOCK TABLES|G
+|root||root||LOCK TABLES|G
 |root||root|127.0.0.1|LOCK TABLES|G
 |root||root|::1|LOCK TABLES|G
+|root||root|desktop-58b7inm|LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
-|root||root|sudogabalas|LOCK TABLES|G
-|root||admin1|localhost|PROCESS|G
+|root||root||PROCESS|G
 |root||root|127.0.0.1|PROCESS|G
 |root||root|::1|PROCESS|G
+|root||root|desktop-58b7inm|PROCESS|G
 |root||root|localhost|PROCESS|G
-|root||root|sudogabalas|PROCESS|G
-|root||admin1|localhost|READ_ONLY ADMIN|G
+|root||root||READ_ONLY ADMIN|G
 |root||root|127.0.0.1|READ_ONLY ADMIN|G
 |root||root|::1|READ_ONLY ADMIN|G
+|root||root|desktop-58b7inm|READ_ONLY ADMIN|G
 |root||root|localhost|READ_ONLY ADMIN|G
-|root||root|sudogabalas|READ_ONLY ADMIN|G
-|root||admin1|localhost|REFERENCES|G
+|root||root||REFERENCES|G
 |root||root|127.0.0.1|REFERENCES|G
 |root||root|::1|REFERENCES|G
+|root||root|desktop-58b7inm|REFERENCES|G
 |root||root|localhost|REFERENCES|G
-|root||root|sudogabalas|REFERENCES|G
-|root||admin1|localhost|RELOAD|G
+|root||root||RELOAD|G
 |root||root|127.0.0.1|RELOAD|G
 |root||root|::1|RELOAD|G
+|root||root|desktop-58b7inm|RELOAD|G
 |root||root|localhost|RELOAD|G
-|root||root|sudogabalas|RELOAD|G
-|root||admin1|localhost|REPLICATION MASTER ADMIN|G
+|root||root||REPLICATION MASTER ADMIN|G
 |root||root|127.0.0.1|REPLICATION MASTER ADMIN|G
 |root||root|::1|REPLICATION MASTER ADMIN|G
+|root||root|desktop-58b7inm|REPLICATION MASTER ADMIN|G
 |root||root|localhost|REPLICATION MASTER ADMIN|G
-|root||root|sudogabalas|REPLICATION MASTER ADMIN|G
-|root||admin1|localhost|REPLICATION SLAVE|G
+|root||root||REPLICATION SLAVE|G
 |root||root|127.0.0.1|REPLICATION SLAVE|G
 |root||root|::1|REPLICATION SLAVE|G
+|root||root|desktop-58b7inm|REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
-|root||root|sudogabalas|REPLICATION SLAVE|G
-|root||admin1|localhost|REPLICATION SLAVE ADMIN|G
+|root||root||REPLICATION SLAVE ADMIN|G
 |root||root|127.0.0.1|REPLICATION SLAVE ADMIN|G
 |root||root|::1|REPLICATION SLAVE ADMIN|G
+|root||root|desktop-58b7inm|REPLICATION SLAVE ADMIN|G
 |root||root|localhost|REPLICATION SLAVE ADMIN|G
-|root||root|sudogabalas|REPLICATION SLAVE ADMIN|G
-|root||admin1|localhost|SELECT|G
+|root||root||SELECT|G
 |root||root|127.0.0.1|SELECT|G
 |root||root|::1|SELECT|G
+|root||root|desktop-58b7inm|SELECT|G
 |root||root|localhost|SELECT|G
-|root||root|sudogabalas|SELECT|G
-|root||admin1|localhost|SET USER|G
+|root||root||SET USER|G
 |root||root|127.0.0.1|SET USER|G
 |root||root|::1|SET USER|G
+|root||root|desktop-58b7inm|SET USER|G
 |root||root|localhost|SET USER|G
-|root||root|sudogabalas|SET USER|G
-|root||admin1|localhost|SHOW CREATE ROUTINE|G
+|root||root||SHOW CREATE ROUTINE|G
 |root||root|127.0.0.1|SHOW CREATE ROUTINE|G
 |root||root|::1|SHOW CREATE ROUTINE|G
+|root||root|desktop-58b7inm|SHOW CREATE ROUTINE|G
 |root||root|localhost|SHOW CREATE ROUTINE|G
-|root||root|sudogabalas|SHOW CREATE ROUTINE|G
-|root||admin1|localhost|SHOW DATABASES|G
+|root||root||SHOW DATABASES|G
 |root||root|127.0.0.1|SHOW DATABASES|G
 |root||root|::1|SHOW DATABASES|G
+|root||root|desktop-58b7inm|SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
-|root||root|sudogabalas|SHOW DATABASES|G
-|root||admin1|localhost|SHOW VIEW|G
+|root||root||SHOW VIEW|G
 |root||root|127.0.0.1|SHOW VIEW|G
 |root||root|::1|SHOW VIEW|G
+|root||root|desktop-58b7inm|SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
-|root||root|sudogabalas|SHOW VIEW|G
-|root||admin1|localhost|SHUTDOWN|G
+|root||root||SHUTDOWN|G
 |root||root|127.0.0.1|SHUTDOWN|G
 |root||root|::1|SHUTDOWN|G
+|root||root|desktop-58b7inm|SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
-|root||root|sudogabalas|SHUTDOWN|G
-|root||admin1|localhost|SLAVE MONITOR|G
+|root||root||SLAVE MONITOR|G
 |root||root|127.0.0.1|SLAVE MONITOR|G
 |root||root|::1|SLAVE MONITOR|G
+|root||root|desktop-58b7inm|SLAVE MONITOR|G
 |root||root|localhost|SLAVE MONITOR|G
-|root||root|sudogabalas|SLAVE MONITOR|G
-|root||admin1|localhost|SUPER|G
+|root||root||SUPER|G
 |root||root|127.0.0.1|SUPER|G
 |root||root|::1|SUPER|G
+|root||root|desktop-58b7inm|SUPER|G
 |root||root|localhost|SUPER|G
-|root||root|sudogabalas|SUPER|G
-|root||admin1|localhost|TRIGGER|G
+|root||root||TRIGGER|G
 |root||root|127.0.0.1|TRIGGER|G
 |root||root|::1|TRIGGER|G
+|root||root|desktop-58b7inm|TRIGGER|G
 |root||root|localhost|TRIGGER|G
-|root||root|sudogabalas|TRIGGER|G
-|root||admin1|localhost|UPDATE|G
+|root||root||UPDATE|G
 |root||root|127.0.0.1|UPDATE|G
 |root||root|::1|UPDATE|G
+|root||root|desktop-58b7inm|UPDATE|G
 |root||root|localhost|UPDATE|G
-|root||root|sudogabalas|UPDATE|G
+|root||root||grant option|G
 |root||root|127.0.0.1|grant option|G
 |root||root|::1|grant option|G
-|root||root|localhost|grant option|G
-|root||root|sudogabalas|grant option|G
-flight|schema||admin|localhost|ALTER|G
-flight|schema||admin|localhost|ALTER ROUTINE|G
-flight|schema||admin|localhost|CREATE|G
-flight|schema||admin|localhost|CREATE ROUTINE|G
-flight|schema||admin|localhost|CREATE TEMPORARY TABLES|G
-flight|schema||admin|localhost|CREATE VIEW|G
-flight|schema||admin|localhost|DELETE|G
-flight|schema||admin|localhost|DELETE HISTORY|G
-flight|schema||admin|localhost|DROP|G
-flight|schema||admin|localhost|EVENT|G
-flight|schema||admin|localhost|EXECUTE|G
-flight|schema||admin|localhost|INDEX|G
-flight|schema||admin|localhost|INSERT|G
-flight|schema||admin|localhost|LOCK TABLES|G
-flight|schema||admin|localhost|REFERENCES|G
-flight|schema||admin|localhost|SELECT|G
-flight|schema||admin|localhost|SHOW CREATE ROUTINE|G
-flight|schema||admin|localhost|SHOW VIEW|G
-flight|schema||admin|localhost|TRIGGER|G
-flight|schema||admin|localhost|UPDATE|G</Grants>
-      <ServerVersion>11.5.2</ServerVersion>
+|root||root|desktop-58b7inm|grant option|G
+|root||root|localhost|grant option|G</Grants>
+      <ServerVersion>11.6.2</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1416,276 +1397,221 @@ flight|schema||admin|localhost|UPDATE|G</Grants>
     <collation id="509" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="510" parent="1" name="carservice">
-      <CollationName>latin1_swedish_ci</CollationName>
+    <schema id="510" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="511" parent="1" name="employment">
-      <CollationName>latin1_swedish_ci</CollationName>
+    <schema id="511" parent="1" name="mysql">
+      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
-    <schema id="512" parent="1" name="flight">
+    <schema id="512" parent="1" name="nojus_l_car_service">
+      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
+    </schema>
+    <schema id="513" parent="1" name="nojus_l_flight_booking">
       <Current>1</Current>
-      <Grants>customer|||customer-manager|localhost|INSERT|G
-customer|||customer|localhost|SELECT|G
-flight|||flight-manager|localhost|ALTER|G
-flight|||flight-manager|localhost|DELETE|G
-flight|||flight-manager|localhost|INSERT|G
-flight|||customer|localhost|SELECT|G
-flight|||flight-manager|localhost|SELECT|G
-flight|||flight-manager|localhost|UPDATE|G
-route|||flight-manager|localhost|ALTER|G
-route|||flight-manager|localhost|DELETE|G
-route|||flight-manager|localhost|INSERT|G
-route|||flight-manager|localhost|SELECT|G
-route|||flight-manager|localhost|UPDATE|G</Grants>
-      <LastIntrospectionLocalTimestamp>2024-11-26.13:14:48</LastIntrospectionLocalTimestamp>
-      <CollationName>latin1_swedish_ci</CollationName>
+      <LastIntrospectionLocalTimestamp>2025-01-27.19:50:44</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
-    <schema id="513" parent="1" name="information_schema">
+    <schema id="514" parent="1" name="performance_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="514" parent="1" name="mysql">
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <schema id="515" parent="1" name="newtravelagency">
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <schema id="516" parent="1" name="nojus_lankelis_car_service">
-      <Grants>customer|||customers|localhost|SELECT|G
-job|||receptionist|localhost|DELETE|G
-job|||receptionist|localhost|INSERT|G
-job|||customers|localhost|SELECT|G
-job|||receptionist|localhost|SELECT|G
-job|||receptionist|localhost|UPDATE|G</Grants>
-      <LastIntrospectionLocalTimestamp>2024-11-26.13:11:02</LastIntrospectionLocalTimestamp>
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <schema id="517" parent="1" name="onlinemediarentals">
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <schema id="518" parent="1" name="performance_schema">
+    <schema id="515" parent="1" name="sys">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="519" parent="1" name="sys">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <schema id="520" parent="1" name="travelagency">
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <user id="521" parent="1" name="admin1">
+    <user id="516" parent="1" name="mariadb.sys">
       <Host>localhost</Host>
     </user>
-    <user id="522" parent="1" name="admin">
-      <Host>localhost</Host>
-    </user>
-    <user id="523" parent="1" name="customer-manager">
-      <Host>localhost</Host>
-    </user>
-    <user id="524" parent="1" name="customer">
-      <Host>localhost</Host>
-    </user>
-    <user id="525" parent="1" name="customers">
-      <Host>localhost</Host>
-    </user>
-    <user id="526" parent="1" name="flight-manager">
-      <Host>localhost</Host>
-    </user>
-    <user id="527" parent="1" name="mariadb.sys">
-      <Host>localhost</Host>
-    </user>
-    <user id="528" parent="1" name="receptionist">
-      <Host>localhost</Host>
-    </user>
-    <user id="529" parent="1" name="root">
+    <user id="517" parent="1" name="root"/>
+    <user id="518" parent="1" name="root">
       <Host>127.0.0.1</Host>
     </user>
-    <user id="530" parent="1" name="root">
+    <user id="519" parent="1" name="root">
       <Host>::1</Host>
     </user>
-    <user id="531" parent="1" name="root">
+    <user id="520" parent="1" name="root">
+      <Host>desktop-58b7inm</Host>
+    </user>
+    <user id="521" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <user id="532" parent="1" name="root">
-      <Host>sudogabalas</Host>
-    </user>
-    <table id="533" parent="512" name="booking">
+    <table id="522" parent="513" name="booking">
       <Engine>InnoDB</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <table id="534" parent="512" name="customer">
+    <table id="523" parent="513" name="customer">
       <Engine>InnoDB</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <table id="535" parent="512" name="flight">
+    <table id="524" parent="513" name="flight">
       <Engine>InnoDB</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <table id="536" parent="512" name="route">
+    <table id="525" parent="513" name="route">
       <Engine>InnoDB</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <column id="537" parent="533" name="bookingNo">
+    <column id="526" parent="522" name="bookingNo">
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>varchar(6)|0s</StoredType>
     </column>
-    <column id="538" parent="533" name="adultTicket">
+    <column id="527" parent="522" name="adultTicket">
+      <DasType>int(3)|0s</DasType>
       <Position>2</Position>
-      <StoredType>int(3)|0s</StoredType>
     </column>
-    <column id="539" parent="533" name="childTicket">
+    <column id="528" parent="522" name="childTicket">
+      <DasType>int(3)|0s</DasType>
       <Position>3</Position>
-      <StoredType>int(3)|0s</StoredType>
     </column>
-    <column id="540" parent="533" name="concessionTicket">
+    <column id="529" parent="522" name="concessionTicket">
+      <DasType>int(3)|0s</DasType>
       <Position>4</Position>
-      <StoredType>int(3)|0s</StoredType>
     </column>
-    <column id="541" parent="533" name="customerID">
+    <column id="530" parent="522" name="customerID">
+      <DasType>varchar(7)|0s</DasType>
       <Position>5</Position>
-      <StoredType>varchar(7)|0s</StoredType>
     </column>
-    <column id="542" parent="533" name="flightID">
+    <column id="531" parent="522" name="flightID">
+      <DasType>varchar(7)|0s</DasType>
       <Position>6</Position>
-      <StoredType>varchar(7)|0s</StoredType>
     </column>
-    <foreign-key id="543" parent="533" name="booking_ibfk_1">
+    <foreign-key id="532" parent="522" name="booking_ibfk_1">
       <ColNames>customerID</ColNames>
       <RefColNames>customerID</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <foreign-key id="544" parent="533" name="booking_ibfk_2">
+    <foreign-key id="533" parent="522" name="booking_ibfk_2">
       <ColNames>flightID</ColNames>
       <RefColNames>flightID</RefColNames>
       <RefTableName>flight</RefTableName>
     </foreign-key>
-    <index id="545" parent="533" name="PRIMARY">
+    <index id="534" parent="522" name="PRIMARY">
       <ColNames>bookingNo</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="546" parent="533" name="customerID">
+    <index id="535" parent="522" name="customerID">
       <ColNames>customerID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="547" parent="533" name="flightID">
+    <index id="536" parent="522" name="flightID">
       <ColNames>flightID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="548" parent="533" name="PRIMARY">
+    <key id="537" parent="522" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="549" parent="534" name="customerID">
+    <column id="538" parent="523" name="customerID">
+      <DasType>varchar(10)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>varchar(10)|0s</StoredType>
     </column>
-    <column id="550" parent="534" name="forename">
+    <column id="539" parent="523" name="forename">
+      <DasType>varchar(40)|0s</DasType>
       <Position>2</Position>
-      <StoredType>varchar(40)|0s</StoredType>
     </column>
-    <column id="551" parent="534" name="surname">
+    <column id="540" parent="523" name="surname">
+      <DasType>varchar(50)|0s</DasType>
       <Position>3</Position>
-      <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="552" parent="534" name="street">
+    <column id="541" parent="523" name="street">
+      <DasType>varchar(100)|0s</DasType>
       <Position>4</Position>
-      <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="553" parent="534" name="town">
+    <column id="542" parent="523" name="town">
+      <DasType>varchar(50)|0s</DasType>
       <Position>5</Position>
-      <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="554" parent="534" name="postcode">
+    <column id="543" parent="523" name="postcode">
+      <DasType>varchar(10)|0s</DasType>
       <Position>6</Position>
-      <StoredType>varchar(10)|0s</StoredType>
     </column>
-    <index id="555" parent="534" name="PRIMARY">
+    <index id="544" parent="523" name="PRIMARY">
       <ColNames>customerID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="556" parent="534" name="PRIMARY">
+    <key id="545" parent="523" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="557" parent="535" name="flightID">
+    <column id="546" parent="524" name="flightID">
+      <DasType>varchar(5)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>varchar(5)|0s</StoredType>
     </column>
-    <column id="558" parent="535" name="departureDate">
+    <column id="547" parent="524" name="departureDate">
+      <DasType>date|0s</DasType>
       <Position>2</Position>
-      <StoredType>date|0s</StoredType>
     </column>
-    <column id="559" parent="535" name="departureTime">
+    <column id="548" parent="524" name="departureTime">
+      <DasType>time|0s</DasType>
       <Position>3</Position>
-      <StoredType>time|0s</StoredType>
     </column>
-    <column id="560" parent="535" name="arrivalDate">
+    <column id="549" parent="524" name="arrivalDate">
+      <DasType>date|0s</DasType>
       <Position>4</Position>
-      <StoredType>date|0s</StoredType>
     </column>
-    <column id="561" parent="535" name="arrivalTime">
+    <column id="550" parent="524" name="arrivalTime">
+      <DasType>time|0s</DasType>
       <Position>5</Position>
-      <StoredType>time|0s</StoredType>
     </column>
-    <column id="562" parent="535" name="capacity">
+    <column id="551" parent="524" name="capacity">
+      <DasType>int(11)|0s</DasType>
       <Position>6</Position>
-      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="563" parent="535" name="routeID">
+    <column id="552" parent="524" name="routeID">
+      <DasType>varchar(6)|0s</DasType>
       <Position>7</Position>
-      <StoredType>varchar(6)|0s</StoredType>
     </column>
-    <foreign-key id="564" parent="535" name="flight_ibfk_1">
+    <foreign-key id="553" parent="524" name="flight_ibfk_1">
       <ColNames>routeID</ColNames>
       <RefColNames>routeID</RefColNames>
       <RefTableName>route</RefTableName>
     </foreign-key>
-    <index id="565" parent="535" name="PRIMARY">
+    <index id="554" parent="524" name="PRIMARY">
       <ColNames>flightID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="566" parent="535" name="routeID">
+    <index id="555" parent="524" name="routeID">
       <ColNames>routeID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="567" parent="535" name="PRIMARY">
+    <key id="556" parent="524" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="568" parent="536" name="routeID">
+    <column id="557" parent="525" name="routeID">
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>varchar(6)|0s</StoredType>
     </column>
-    <column id="569" parent="536" name="departFrom">
+    <column id="558" parent="525" name="departFrom">
+      <DasType>varchar(3)|0s</DasType>
       <Position>2</Position>
-      <StoredType>varchar(3)|0s</StoredType>
     </column>
-    <column id="570" parent="536" name="arriveAt">
+    <column id="559" parent="525" name="arriveAt">
+      <DasType>varchar(3)|0s</DasType>
       <Position>3</Position>
-      <StoredType>varchar(3)|0s</StoredType>
     </column>
-    <column id="571" parent="536" name="midStopOne">
+    <column id="560" parent="525" name="midStopOne">
+      <DasType>varchar(3)|0s</DasType>
       <Position>4</Position>
-      <StoredType>varchar(3)|0s</StoredType>
     </column>
-    <column id="572" parent="536" name="midStopTwo">
+    <column id="561" parent="525" name="midStopTwo">
+      <DasType>varchar(3)|0s</DasType>
       <Position>5</Position>
-      <StoredType>varchar(3)|0s</StoredType>
     </column>
-    <index id="573" parent="536" name="PRIMARY">
+    <index id="562" parent="525" name="PRIMARY">
       <ColNames>routeID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="574" parent="536" name="PRIMARY">
+    <key id="563" parent="525" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
