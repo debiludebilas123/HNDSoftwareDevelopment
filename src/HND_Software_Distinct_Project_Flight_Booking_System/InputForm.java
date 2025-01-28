@@ -49,9 +49,10 @@ public class InputForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String bookingNo = bookingNoInput.getText();
-                int adultTicketNo = Integer.parseInt(adultNoInput.getText());
-                int childTicketNo = Integer.parseInt(childNoInput.getText());
-                int concessionTicketNo = Integer.parseInt(concessionNoInput.getText());
+                int adultTicketNo = parseNumber(adultNoInput, "Adult ticket number");
+                int childTicketNo = parseNumber(childNoInput, "Child ticket number");
+                int concessionTicketNo = parseNumber(concessionNoInput, "Concession ticket number");
+
                 String customerIDBooking = customerIDInputBooking.getText();
                 String flightIDBooking = flightIDInputBooking.getText();
 
@@ -72,7 +73,7 @@ public class InputForm {
                 String routeIDFlight = routeIDInputFlight.getText();
                 String arrivalDate = arrivalDateInput.getText();
                 String arrivalTime = arrivalTimeInput.getText();
-                int capacity = Integer.parseInt(capacityInput.getText());
+                int capacity = parseNumber(capacityInput, "Capacity");
 
                 Flight flight = new Flight(flightID, departureDate, departureTime, routeIDFlight, arrivalDate, arrivalTime, capacity);
 
@@ -84,31 +85,52 @@ public class InputForm {
 
                 Route route = new Route(routeID, departFrom, arriveAt, midStopOne, midStopTwo);
 
-
-                /*if (isValid(bookingNo, adultTicketNo, childTicketNo, concessionTicketNo, customerID, flightID)) {
-                    String[] bookingData = {bookingNo, Integer.toString(adultTicketNo), Integer.toString(childTicketNo),
-                            Integer.toString(concessionTicketNo), customerID, flightID};
-                    NewCSVWriter.writeToCsv("booking.csv", bookingData);
-                    JOptionPane.showMessageDialog(getPanel1(), "Booking successful");
-                } else {
-                    JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
-                }*/
-                try {
-                    NewCSVWriter.writeBookingToCsv(booking);
-                    NewCSVWriter.writeCustomerToCsv(customer);
-                    NewCSVWriter.writeFlightToCsv(flight);
-                    NewCSVWriter.writeRouteToCsv(route);
-                    JOptionPane.showMessageDialog(flightInputPanel, "Booking saved successfully!");
-                } catch (Exception exception) {
-                    JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
+                if (customerIsValid(customer.getCustomerID()) || bookingIsValid(booking.getBookingNo(), booking.getCustomerID(),
+                        booking.getFlightID()) || routeIsValid(route.getRouteID()) || flightIsValid(flight.getFlightID())) {
+                    try {
+                        CSVWriter.writeBookingToCsv(booking);
+                        CSVWriter.writeCustomerToCsv(customer);
+                        CSVWriter.writeFlightToCsv(flight);
+                        CSVWriter.writeRouteToCsv(route);
+                        JOptionPane.showMessageDialog(flightInputPanel, "Booking saved successfully!");
+                    } catch (Exception exception) {
+                        JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
+                    }
                 }
             }
         });
     }
 
-    private boolean isValid(String bookingNo, int adultTicketNo, int childTicketNo, int concessionTicketNo, String customerID, String flightID) {
-        return true;
+    private boolean customerIsValid(String customerID) {
+        return !customerID.isBlank();
     }
+
+    private boolean bookingIsValid(String bookingNo, String customerID, String flightID) {
+        return !bookingNo.isBlank() && !customerID.isBlank() && !flightID.isBlank();
+    }
+
+    private boolean routeIsValid(String routeID) {
+        return !routeID.isBlank();
+    }
+
+    private boolean flightIsValid(String flightID) {
+        return !flightID.isBlank();
+    }
+
+    private int parseNumber(JTextField textField, String fieldName) {
+        String input = textField.getText();
+        if (input.isBlank()) {
+            JOptionPane.showMessageDialog(null, fieldName + " cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalArgumentException(fieldName + " is required");
+        }
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Invalid number for " + fieldName, "Input Error", JOptionPane.ERROR_MESSAGE);
+            throw e;
+        }
+    }
+
 
     public JPanel getPanel1() {
         return flightInputPanel;

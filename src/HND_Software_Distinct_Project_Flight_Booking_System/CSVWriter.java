@@ -1,57 +1,73 @@
 package HND_Software_Distinct_Project_Flight_Booking_System;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class CSVWriter {
-    public static void writeCustomerToCSV(Customer customer) {
-        try (FileWriter writer = new FileWriter("customers.csv", true)) {
-            writer.append(customer.getCustomerID()).append(",");
-            writer.append(customer.getForename()).append(",");
-            writer.append(customer.getSurname()).append(",");
-            writer.append(customer.getStreet()).append(",");
-            writer.append(customer.getTown()).append(",");
-            writer.append(customer.getPostcode()).append("\n");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public static void writeToCsv(String filePath, String[] data) {
+        try (FileWriter writer = new FileWriter(filePath, true)) {
+            writer.append(String.join(",", data));
+            writer.append("\n");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    public static void writeBookingToCSV(Booking booking) {
-        try (FileWriter writer = new FileWriter("bookings.csv", true)) {
-            writer.append(booking.getBookingNo()).append(",");
-            writer.append(booking.getCustomerID()).append(",");
-            writer.append(String.valueOf(booking.getAdultTicket())).append(",");
-            writer.append(String.valueOf(booking.getChildTicket())).append(",");
-            writer.append(String.valueOf(booking.getConcessionTicket())).append(",");
-            writer.append(booking.getFlightID()).append("\n");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public static void writeBookingToCsv(Booking booking) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("booking.csv", true))) {
+            writer.write(booking.getBookingNo() + "," +
+                         booking.getAdultTicket() + "," +
+                         booking.getChildTicket() + "," +
+                         booking.getConcessionTicket() + "," +
+                         booking.getCustomerID() + "," +
+                         booking.getFlightID());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    public static void writeFlightToCSV(Flight flight) {
-        try (FileWriter writer = new FileWriter("flights.csv", true)) {
-            writer.append(flight.getFlightID()).append(",");
-            writer.append(flight.getDepartureDate()).append(",");
-            writer.append(flight.getDepartureTime()).append(",");
-            writer.append(flight.getRouteID()).append(",");
-            writer.append(flight.getArrivalDate()).append(",");
-            writer.append(flight.getArrivalTime()).append(",");
-            writer.append(String.valueOf(flight.getCapacity())).append("\n");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public static void writeRouteToCsv(Route route) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("route.csv", true))) {
+            writer.write(route.getRouteID() + "," +
+                    route.getDepartFrom() + "," +
+                    route.getArriveAt() + "," +
+                    route.getMidStopOne() + "," +
+                    route.getMidStopTwo());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    public static void writeRouteToCSV(Route route) {
-        try (FileWriter writer = new FileWriter("routes.csv", true)) {
-            writer.append(route.getRouteID()).append(",");
-            writer.append(route.getDepartFrom()).append(",");
-            writer.append(route.getArriveAt()).append(",");
-            writer.append(route.getMidStopOne()).append(",");
-            writer.append(route.getMidStopTwo()).append("\n");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public static void writeCustomerToCsv(Customer customer) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("customers.csv", true))) {
+            writer.write(customer.getCustomerID() + "," +
+                    customer.getForename() + "," +
+                    customer.getSurname() + "," +
+                    customer.getStreet() + "," +
+                    customer.getTown() + "," +
+                    customer.getPostcode());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
+    public static void writeFlightToCsv(Flight flight) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("flight.csv", true))) {
+            writer.write(flight.getFlightID() + "," +
+                    flight.getDepartureDate() + "," +
+                    flight.getDepartureTime() + "," +
+                    flight.getRouteID() + "," +
+                    flight.getArrivalDate() + "," +
+                    flight.getArrivalTime() + "," +
+                    flight.getCapacity());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
