@@ -3,6 +3,10 @@ package HND_Software_Distinct_Project_Flight_Booking_System;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class InputForm {
     private JPanel flightInputPanel;
@@ -68,11 +72,11 @@ public class InputForm {
                 Customer customer = new Customer(customerID, forename, surname, street, town, postcode);
 
                 String flightID = flightIDInput.getText();
-                String departureDate = departureDateInput.getText();
-                String departureTime = departureTimeInput.getText();
+                LocalDate departureDate = parseDate(departureDateInput, "Departure Date");
+                LocalTime departureTime = parseTime(departureTimeInput, "Departure Time");
                 String routeIDFlight = routeIDInputFlight.getText();
-                String arrivalDate = arrivalDateInput.getText();
-                String arrivalTime = arrivalTimeInput.getText();
+                LocalDate arrivalDate = parseDate(arrivalDateInput, "Arrival Date");
+                LocalTime arrivalTime = parseTime(arrivalTimeInput, "Arrival Time");
                 int capacity = parseNumber(capacityInput, "Capacity");
 
                 Flight flight = new Flight(flightID, departureDate, departureTime, routeIDFlight, arrivalDate, arrivalTime, capacity);
@@ -127,6 +131,38 @@ public class InputForm {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Invalid number for " + fieldName, "Input Error", JOptionPane.ERROR_MESSAGE);
+            throw e;
+        }
+    }
+
+    private LocalDate parseDate(JTextField textField, String fieldName) {
+        String input = textField.getText();
+        if (input.isBlank()) {
+            JOptionPane.showMessageDialog(null, fieldName + " cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalArgumentException(fieldName + " is required");
+        }
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+            return LocalDate.parse(input, formatter);
+        } catch (DateTimeParseException e) {
+            JOptionPane.showMessageDialog(null, "Invalid date format for " + fieldName + ". Please use yyyy-MM-dd.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            throw e;
+        }
+    }
+
+
+    private LocalTime parseTime(JTextField textField, String fieldName) {
+        String input = textField.getText();
+        if (input.isBlank()) {
+            JOptionPane.showMessageDialog(null, fieldName + " cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            throw new IllegalArgumentException(fieldName + " is required");
+        }
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+            return LocalTime.parse(input, formatter);
+        } catch (DateTimeParseException e) {
+            JOptionPane.showMessageDialog(null, "Invalid time for " + fieldName, "Input Error", JOptionPane.ERROR_MESSAGE);
             throw e;
         }
     }

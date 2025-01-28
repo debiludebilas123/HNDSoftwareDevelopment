@@ -1,15 +1,18 @@
 package HND_Software_Distinct_Project_Flight_Booking_System;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Flight {
     private String flightID;
-    private String departureDate;
-    private String departureTime;
+    private LocalDate departureDate;
+    private LocalTime departureTime;
     private String routeID;
-    private String arrivalDate;
-    private String arrivalTime;
+    private LocalDate arrivalDate;
+    private LocalTime arrivalTime;
     private int capacity;
 
-    public Flight(String flightID, String departureDate, String departureTime, String routeID, String arrivalDate, String arrivalTime, int capacity) {
+    public Flight(String flightID, LocalDate departureDate, LocalTime departureTime, String routeID, LocalDate arrivalDate, LocalTime arrivalTime, int capacity) {
         this.flightID = flightID;
         this.departureDate = departureDate;
         this.departureTime = departureTime;
@@ -23,11 +26,11 @@ public class Flight {
         return flightID;
     }
 
-    public String getArrivalDate() {
+    public LocalDate getArrivalDate() {
         return arrivalDate;
     }
 
-    public String getArrivalTime() {
+    public LocalTime getArrivalTime() {
         return arrivalTime;
     }
 
@@ -35,11 +38,11 @@ public class Flight {
         return capacity;
     }
 
-    public String getDepartureDate() {
+    public LocalDate getDepartureDate() {
         return departureDate;
     }
 
-    public String getDepartureTime() {
+    public LocalTime getDepartureTime() {
         return departureTime;
     }
 

@@ -292,7 +292,7 @@
           <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Arrival Date"/>
+          <text value="Arrival Date YYYY-MM-DD"/>
         </properties>
       </component>
       <component id="d5d0b" class="javax.swing.JLabel" binding="departureTimeLabel">
@@ -300,7 +300,7 @@
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Departure Time"/>
+          <text value="Departure Time HH:MM:SS"/>
         </properties>
       </component>
       <component id="fcb77" class="javax.swing.JLabel" binding="departureDateLabel">
@@ -308,7 +308,7 @@
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Departure Date"/>
+          <text value="Departure Date YYYY-MM-DD"/>
         </properties>
       </component>
       <component id="a86d3" class="javax.swing.JLabel" binding="flightIdLabel">
@@ -357,7 +357,7 @@
           <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Arrival Time"/>
+          <text value="Arrival Time HH:MM:SS"/>
         </properties>
       </component>
       <component id="cdb71" class="javax.swing.JLabel">
