@@ -54,12 +54,21 @@ public class InputForm {
                 int concessionTicketNo = Integer.parseInt(concessionNoInput.getText());
                 String customerID = customerIDInputBooking.getText();
                 String flightID = flightIDInputBooking.getText();
-                if (isValid(bookingNo, adultTicketNo, childTicketNo, concessionTicketNo, customerID, flightID)) {
+
+                Booking booking = new Booking(bookingNo,customerID, adultTicketNo, childTicketNo, concessionTicketNo, flightID);
+
+                /*if (isValid(bookingNo, adultTicketNo, childTicketNo, concessionTicketNo, customerID, flightID)) {
                     String[] bookingData = {bookingNo, Integer.toString(adultTicketNo), Integer.toString(childTicketNo),
                             Integer.toString(concessionTicketNo), customerID, flightID};
                     NewCSVWriter.writeToCsv("booking.csv", bookingData);
                     JOptionPane.showMessageDialog(getPanel1(), "Booking successful");
                 } else {
+                    JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
+                }*/
+                try  {
+                    NewCSVWriter.writeBookingToCsv(booking);
+                    JOptionPane.showMessageDialog(flightInputPanel, "Booking saved successfully!");
+                } catch (Exception exception){
                     JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
                 }
             }
