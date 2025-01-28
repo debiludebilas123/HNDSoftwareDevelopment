@@ -89,8 +89,8 @@ public class InputForm {
 
                 Route route = new Route(routeID, departFrom, arriveAt, midStopOne, midStopTwo);
 
-                if (customerIsValid(customer.getCustomerID()) || bookingIsValid(booking.getBookingNo(), booking.getCustomerID(),
-                        booking.getFlightID()) || routeIsValid(route.getRouteID()) || flightIsValid(flight.getFlightID())) {
+                if (customerIsValid(customer.getCustomerID()) && bookingIsValid(booking.getBookingNo(), booking.getCustomerID(),
+                        booking.getFlightID()) && routeIsValid(route.getRouteID()) && flightIsValid(flight.getFlightID())) {
                     try {
                         CSVWriter.writeBookingToCsv(booking);
                         CSVWriter.writeCustomerToCsv(customer);
@@ -100,30 +100,32 @@ public class InputForm {
                     } catch (Exception exception) {
                         JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Primary/Foreign keys cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
     }
 
     private boolean customerIsValid(String customerID) {
-        return !customerID.isBlank();
+        return !customerID.isEmpty();
     }
 
     private boolean bookingIsValid(String bookingNo, String customerID, String flightID) {
-        return !bookingNo.isBlank() && !customerID.isBlank() && !flightID.isBlank();
+        return !bookingNo.isEmpty() && !customerID.isEmpty() && !flightID.isEmpty();
     }
 
     private boolean routeIsValid(String routeID) {
-        return !routeID.isBlank();
+        return !routeID.isEmpty();
     }
 
     private boolean flightIsValid(String flightID) {
-        return !flightID.isBlank();
+        return !flightID.isEmpty();
     }
 
     private int parseNumber(JTextField textField, String fieldName) {
         String input = textField.getText();
-        if (input.isBlank()) {
+        if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, fieldName + " cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalArgumentException(fieldName + " is required");
         }
@@ -137,7 +139,7 @@ public class InputForm {
 
     private LocalDate parseDate(JTextField textField, String fieldName) {
         String input = textField.getText();
-        if (input.isBlank()) {
+        if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, fieldName + " cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalArgumentException(fieldName + " is required");
         }
@@ -154,7 +156,7 @@ public class InputForm {
 
     private LocalTime parseTime(JTextField textField, String fieldName) {
         String input = textField.getText();
-        if (input.isBlank()) {
+        if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, fieldName + " cannot be empty.", "Input Error", JOptionPane.ERROR_MESSAGE);
             throw new IllegalArgumentException(fieldName + " is required");
         }
