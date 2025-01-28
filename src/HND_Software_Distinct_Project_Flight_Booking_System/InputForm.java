@@ -52,10 +52,38 @@ public class InputForm {
                 int adultTicketNo = Integer.parseInt(adultNoInput.getText());
                 int childTicketNo = Integer.parseInt(childNoInput.getText());
                 int concessionTicketNo = Integer.parseInt(concessionNoInput.getText());
-                String customerID = customerIDInputBooking.getText();
-                String flightID = flightIDInputBooking.getText();
+                String customerIDBooking = customerIDInputBooking.getText();
+                String flightIDBooking = flightIDInputBooking.getText();
 
-                Booking booking = new Booking(bookingNo,customerID, adultTicketNo, childTicketNo, concessionTicketNo, flightID);
+                Booking booking = new Booking(bookingNo, customerIDBooking, adultTicketNo, childTicketNo, concessionTicketNo, flightIDBooking);
+
+                String customerID = customerIDInput.getText();
+                String forename = forenameInput.getText();
+                String surname = surnameInput.getText();
+                String street = streetInput.getText();
+                String town = townInput.getText();
+                String postcode = postcodeInput.getText();
+
+                Customer customer = new Customer(customerID, forename, surname, street, town, postcode);
+
+                String flightID = flightIDInput.getText();
+                String departureDate = departureDateInput.getText();
+                String departureTime = departureTimeInput.getText();
+                String routeIDFlight = routeIDInputFlight.getText();
+                String arrivalDate = arrivalDateInput.getText();
+                String arrivalTime = arrivalTimeInput.getText();
+                int capacity = Integer.parseInt(capacityInput.getText());
+
+                Flight flight = new Flight(flightID, departureDate, departureTime, routeIDFlight, arrivalDate, arrivalTime, capacity);
+
+                String routeID = routeIDInput.getText();
+                String departFrom = departingFromInput.getText();
+                String arriveAt = arrivingAtInput.getText();
+                String midStopOne = middleStopOneInput.getText();
+                String midStopTwo = middleStopTwoInput.getText();
+
+                Route route = new Route(routeID, departFrom, arriveAt, midStopOne, midStopTwo);
+
 
                 /*if (isValid(bookingNo, adultTicketNo, childTicketNo, concessionTicketNo, customerID, flightID)) {
                     String[] bookingData = {bookingNo, Integer.toString(adultTicketNo), Integer.toString(childTicketNo),
@@ -65,10 +93,13 @@ public class InputForm {
                 } else {
                     JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
                 }*/
-                try  {
+                try {
                     NewCSVWriter.writeBookingToCsv(booking);
+                    NewCSVWriter.writeCustomerToCsv(customer);
+                    NewCSVWriter.writeFlightToCsv(flight);
+                    NewCSVWriter.writeRouteToCsv(route);
                     JOptionPane.showMessageDialog(flightInputPanel, "Booking saved successfully!");
-                } catch (Exception exception){
+                } catch (Exception exception) {
                     JOptionPane.showMessageDialog(getPanel1(), "Booking failed");
                 }
             }

@@ -15,13 +15,55 @@ public class NewCSVWriter {
     }
 
     public static void writeBookingToCsv(Booking booking) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("customers.csv", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("booking.csv", true))) {
             writer.write(booking.getBookingNo() + "," +
                          booking.getAdultTicket() + "," +
                          booking.getChildTicket() + "," +
                          booking.getConcessionTicket() + "," +
                          booking.getCustomerID() + "," +
                          booking.getFlightID());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeRouteToCsv(Route route) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("route.csv", true))) {
+            writer.write(route.getRouteID() + "," +
+                    route.getDepartFrom() + "," +
+                    route.getArriveAt() + "," +
+                    route.getMidStopOne() + "," +
+                    route.getMidStopTwo());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeCustomerToCsv(Customer customer) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("customers.csv", true))) {
+            writer.write(customer.getCustomerID() + "," +
+                    customer.getForename() + "," +
+                    customer.getSurname() + "," +
+                    customer.getStreet() + "," +
+                    customer.getTown() + "," +
+                    customer.getPostcode());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeFlightToCsv(Flight flight) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("flight.csv", true))) {
+            writer.write(flight.getFlightID() + "," +
+                    flight.getDepartureDate() + "," +
+                    flight.getDepartureTime() + "," +
+                    flight.getRouteID() + "," +
+                    flight.getArrivalDate() + "," +
+                    flight.getArrivalTime() + "," +
+                    flight.getCapacity());
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
