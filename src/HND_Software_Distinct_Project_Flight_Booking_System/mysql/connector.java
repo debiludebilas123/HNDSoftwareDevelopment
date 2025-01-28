@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class connector {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/flight";
+        String url = "jdbc:mysql://localhost:3306/nojus_l_flight_booking";
         String user = "root";
         String password = "9809";
         Connection conn = null;
