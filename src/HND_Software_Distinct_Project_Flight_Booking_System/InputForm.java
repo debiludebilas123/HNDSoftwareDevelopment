@@ -52,42 +52,10 @@ public class InputForm {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String bookingNo = bookingNoInput.getText();
-                int adultTicketNo = parseNumber(adultNoInput, "Adult ticket number");
-                int childTicketNo = parseNumber(childNoInput, "Child ticket number");
-                int concessionTicketNo = parseNumber(concessionNoInput, "Concession ticket number");
-
-                String customerIDBooking = customerIDInputBooking.getText();
-                String flightIDBooking = flightIDInputBooking.getText();
-
-                Booking booking = new Booking(bookingNo, customerIDBooking, adultTicketNo, childTicketNo, concessionTicketNo, flightIDBooking);
-
-                String customerID = customerIDInput.getText();
-                String forename = forenameInput.getText();
-                String surname = surnameInput.getText();
-                String street = streetInput.getText();
-                String town = townInput.getText();
-                String postcode = postcodeInput.getText();
-
-                Customer customer = new Customer(customerID, forename, surname, street, town, postcode);
-
-                String flightID = flightIDInput.getText();
-                LocalDate departureDate = parseDate(departureDateInput, "Departure Date");
-                LocalTime departureTime = parseTime(departureTimeInput, "Departure Time");
-                String routeIDFlight = routeIDInputFlight.getText();
-                LocalDate arrivalDate = parseDate(arrivalDateInput, "Arrival Date");
-                LocalTime arrivalTime = parseTime(arrivalTimeInput, "Arrival Time");
-                int capacity = parseNumber(capacityInput, "Capacity");
-
-                Flight flight = new Flight(flightID, departureDate, departureTime, routeIDFlight, arrivalDate, arrivalTime, capacity);
-
-                String routeID = routeIDInput.getText();
-                String departFrom = departingFromInput.getText();
-                String arriveAt = arrivingAtInput.getText();
-                String midStopOne = middleStopOneInput.getText();
-                String midStopTwo = middleStopTwoInput.getText();
-
-                Route route = new Route(routeID, departFrom, arriveAt, midStopOne, midStopTwo);
+                Booking booking = createBooking();
+                Customer customer = createCustomer();
+                Flight flight = createFlight();
+                Route route = createRoute();
 
                 if (customerIsValid(customer.getCustomerID()) && bookingIsValid(booking.getBookingNo(), booking.getCustomerID(),
                         booking.getFlightID()) && routeIsValid(route.getRouteID()) && flightIsValid(flight.getFlightID())) {
@@ -169,7 +137,49 @@ public class InputForm {
         }
     }
 
+    private Booking createBooking() {
+        String bookingNo = bookingNoInput.getText();
+        int adultTicketNo = parseNumber(adultNoInput, "Adult ticket number");
+        int childTicketNo = parseNumber(childNoInput, "Child ticket number");
+        int concessionTicketNo = parseNumber(concessionNoInput, "Concession ticket number");
+        String customerIDBooking = customerIDInputBooking.getText();
+        String flightIDBooking = flightIDInputBooking.getText();
 
+        return new Booking(bookingNo, customerIDBooking, adultTicketNo, childTicketNo, concessionTicketNo, flightIDBooking);
+    }
+
+    private Flight createFlight() {
+        String flightID = flightIDInput.getText();
+        LocalDate departureDate = parseDate(departureDateInput, "Departure Date");
+        LocalTime departureTime = parseTime(departureTimeInput, "Departure Time");
+        String routeIDFlight = routeIDInputFlight.getText();
+        LocalDate arrivalDate = parseDate(arrivalDateInput, "Arrival Date");
+        LocalTime arrivalTime = parseTime(arrivalTimeInput, "Arrival Time");
+        int capacity = parseNumber(capacityInput, "Capacity");
+
+        return new Flight(flightID, departureDate, departureTime, routeIDFlight, arrivalDate, arrivalTime, capacity);
+    }
+
+    private Route createRoute() {
+        String routeID = routeIDInput.getText();
+        String departFrom = departingFromInput.getText();
+        String arriveAt = arrivingAtInput.getText();
+        String midStopOne = middleStopOneInput.getText();
+        String midStopTwo = middleStopTwoInput.getText();
+
+        return new Route(routeID, departFrom, arriveAt, midStopOne, midStopTwo);
+    }
+
+    private Customer createCustomer() {
+        String customerID = customerIDInput.getText();
+        String forename = forenameInput.getText();
+        String surname = surnameInput.getText();
+        String street = streetInput.getText();
+        String town = townInput.getText();
+        String postcode = postcodeInput.getText();
+
+        return new Customer(customerID, forename, surname, street, town, postcode);
+    }
     public JPanel getPanel1() {
         return flightInputPanel;
     }
