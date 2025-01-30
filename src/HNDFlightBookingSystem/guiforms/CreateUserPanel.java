@@ -1,9 +1,9 @@
 package HNDFlightBookingSystem.guiforms;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class CreateUserPanel {
+
     private JLabel createUserMenuLabel;
     private JTextField firstNameInput;
     private JTextField lastNameInput;
@@ -11,11 +11,11 @@ public class CreateUserPanel {
     private JTextField phoneInput;
     private JTextField addressInput;
     private JButton createUserButton;
-    private JButton backButton;
+    private JButton backToMenuButton;
     private JPanel createUserPanel;
 
-    public CreateUserPanel(JPanel mainPanel, CardLayout cardLayout) {
-        backButton.addActionListener(e -> cardLayout.show(mainPanel, "MainMenu"));
+    public CreateUserPanel() {
+        backToMenuButton.addActionListener(e -> PanelSwitcher.switchPanel(createUserPanel, "MainMenuPanel"));
     }
 
     public JPanel getCreateUserPanel() {

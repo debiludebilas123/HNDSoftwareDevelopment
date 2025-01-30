@@ -1,4 +1,4 @@
 package HNDFlightBookingSystem.guiforms;
 
-public class CreateBooking {
+public class CreateBookingPanel {
 }
