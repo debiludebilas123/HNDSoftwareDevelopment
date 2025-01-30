@@ -1,4 +1,4 @@
-package HND_Software_Distinct_Project_Flight_Booking_System.mysql;
+/*package HND_Software_Distinct_Project_Flight_Booking_System.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,4 +26,4 @@ public class connector {
             throw new RuntimeException(e);
         }
     }
-}
+}*/

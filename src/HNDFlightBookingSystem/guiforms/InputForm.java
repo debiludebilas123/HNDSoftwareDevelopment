@@ -1,3 +1,4 @@
+/*
 package HND_Software_Distinct_Project_Flight_Booking_System;
 
 import javax.swing.*;
@@ -162,12 +163,9 @@ public class InputForm {
 
     private Route createRoute() {
         String routeID = routeIDInput.getText();
-        String departFrom = departingFromInput.getText();
-        String arriveAt = arrivingAtInput.getText();
-        String midStopOne = middleStopOneInput.getText();
-        String midStopTwo = middleStopTwoInput.getText();
+        String routeName = routeNameInput.getText();
 
-        return new Route(routeID, departFrom, arriveAt, midStopOne, midStopTwo);
+        return new Route(routeID, routeName);
     }
 
     private Customer createCustomer() {
@@ -184,4 +182,4 @@ public class InputForm {
         return flightInputPanel;
     }
 }
-
+*/
