@@ -1,8 +1,10 @@
 package HNDFlightBookingSystem;
 
+import HNDFlightBookingSystem.guiforms.CreateUserPanel;
 import HNDFlightBookingSystem.guiforms.MainMenu;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class main {
     public static void main(String[] args) {
@@ -16,9 +18,9 @@ public class main {
         });*/
 
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Main Menu Form");
+            JFrame frame = new JFrame("Flight Booking System");
             MainMenu mainMenu = new MainMenu();
-            frame.setContentPane((mainMenu.getMainMenuPanel()));
+            frame.setContentPane(mainMenu.getMainMenuPanel());
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
