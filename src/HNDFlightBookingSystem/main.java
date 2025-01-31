@@ -3,6 +3,7 @@ package HNDFlightBookingSystem;
 import HNDFlightBookingSystem.guiforms.CreateUserPanel;
 import HNDFlightBookingSystem.guiforms.DeleteEditUserPanel;
 import HNDFlightBookingSystem.guiforms.MainMenuPanel;
+import HNDFlightBookingSystem.guiforms.SelectUserPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,11 +24,13 @@ public class main {
         MainMenuPanel mainMenuPanel = new MainMenuPanel(frame);
         DeleteEditUserPanel deleteEditUserPanel = new DeleteEditUserPanel(frame);
         CreateUserPanel createUserPanel = new CreateUserPanel(frame, deleteEditUserPanel.getDeleteEditUserTable());
+        SelectUserPanel selectUserPanel = new SelectUserPanel(frame);
 
         // Add panels to CardLayout container
         mainPanel.add(mainMenuPanel.getMainMenuPanel(), "MainMenuPanel");
         mainPanel.add(createUserPanel.getCreateUserPanel(), "CreateUserPanel");
         mainPanel.add(deleteEditUserPanel.getDeleteEditUserPanel(), "DeleteEditUserPanel");
+        mainPanel.add(selectUserPanel.getSelectUserPanel(), "SelectUserPanel");
 
         // Add mainPanel to frame
         frame.setContentPane(mainPanel);

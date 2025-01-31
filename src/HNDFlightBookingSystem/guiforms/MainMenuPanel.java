@@ -9,6 +9,7 @@ public class MainMenuPanel {
     private JButton editUserButton;
     private JButton deleteEditUserButton;
     private JButton exitSystemButton;
+    private JButton selectUserButton;
     private JFrame frame;
 
     public MainMenuPanel(JFrame frame) {
@@ -16,6 +17,7 @@ public class MainMenuPanel {
         //Lambda expressions for switching panels
         createNewUserButton.addActionListener(e -> PanelSwitcher.switchPanel(mainMenuPanel, "CreateUserPanel", frame, 400, 370));
         deleteEditUserButton.addActionListener(e -> PanelSwitcher.switchPanel(mainMenuPanel, "DeleteEditUserPanel", frame, 850, 800));
+        selectUserButton.addActionListener(e -> PanelSwitcher.switchPanel(mainMenuPanel, "SelectUserPanel", frame, 850, 800));
         exitSystemButton.addActionListener(e -> System.exit(0));
     }
 

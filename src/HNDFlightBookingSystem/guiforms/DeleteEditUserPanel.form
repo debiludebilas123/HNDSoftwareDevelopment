@@ -19,7 +19,7 @@
         </constraints>
         <properties>
           <font size="25"/>
-          <text value="Deleting User"/>
+          <text value="Deleting/Editing Users"/>
         </properties>
       </component>
       <component id="3de59" class="javax.swing.JButton" binding="backToMenuButton" default-binding="true">
