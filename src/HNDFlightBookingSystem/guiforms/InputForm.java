@@ -168,16 +168,7 @@ public class InputForm {
         return new Route(routeID, routeName);
     }
 
-    private Customer createCustomer() {
-        String customerID = customerIDInput.getText();
-        String forename = forenameInput.getText();
-        String surname = surnameInput.getText();
-        String street = streetInput.getText();
-        String town = townInput.getText();
-        String postcode = postcodeInput.getText();
 
-        return new Customer(customerID, forename, surname, street, town, postcode);
-    }
     public JPanel getPanel1() {
         return flightInputPanel;
     }

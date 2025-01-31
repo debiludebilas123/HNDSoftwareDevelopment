@@ -25,7 +25,7 @@ public class Customer {
         return forename;
     }
 
-    public String getStreet() {
+    public String getAddress() {
         return address;
     }
 
