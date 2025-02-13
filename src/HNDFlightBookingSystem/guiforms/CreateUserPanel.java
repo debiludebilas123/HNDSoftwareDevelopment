@@ -7,6 +7,8 @@ import javax.swing.table.DefaultTableModel;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CreateUserPanel {
 
@@ -57,7 +59,31 @@ public class CreateUserPanel {
             return null;
         }
 
+        if (!isEmailValid(email)) {
+            JOptionPane.showMessageDialog(frame, "Please enter a valid email.", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+
+        if (!isPhoneValidUK(phone)) {
+            JOptionPane.showMessageDialog(frame, "Please enter a valid phone number.", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+
         return new Customer(customerID, forename, surname, email, phone, address);
+    }
+
+    private boolean isEmailValid(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private boolean isPhoneValidUK(String number) {
+        String phoneRegex = "^(\\+44|0)\\d{10}$";
+        Pattern pattern = Pattern.compile(phoneRegex);
+        Matcher matcher = pattern.matcher(number);
+        return matcher.matches();
     }
 
     // Generates a customerID automatically by making sure it's not duplicate using the edit/delete table data
@@ -74,8 +100,7 @@ public class CreateUserPanel {
                     if (existingNumber >= nextNumber) {
                         nextNumber = existingNumber + 1;
                     }
-                } catch (NumberFormatException e) {
-
+                } catch (NumberFormatException _) {
                 }
             }
         }
@@ -83,8 +108,7 @@ public class CreateUserPanel {
         return prefix + String.format("%05d", nextNumber);
     }
 
-    // Adds customer data which was entered into this panel into the deleteEditUserTable which had the reference passed into this panel (bad explanation but idk)
-    // just adds entries into my edit/delete table
+    // Adds entries into my edit/delete table
     private void addCustomerToTable(Customer customer) {
         DefaultTableModel tableModel = (DefaultTableModel) customerTable.getModel();
         tableModel.addRow(new Object[]{

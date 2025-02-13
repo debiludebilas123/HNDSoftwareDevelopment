@@ -1,9 +1,6 @@
 package HNDFlightBookingSystem;
 
-import HNDFlightBookingSystem.guiforms.CreateUserPanel;
-import HNDFlightBookingSystem.guiforms.DeleteEditUserPanel;
-import HNDFlightBookingSystem.guiforms.MainMenuPanel;
-import HNDFlightBookingSystem.guiforms.SelectUserPanel;
+import HNDFlightBookingSystem.guiforms.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,12 +22,18 @@ public class main {
         DeleteEditUserPanel deleteEditUserPanel = new DeleteEditUserPanel(frame);
         CreateUserPanel createUserPanel = new CreateUserPanel(frame, deleteEditUserPanel.getDeleteEditUserTable());
         SelectUserPanel selectUserPanel = new SelectUserPanel(frame);
+        SelectUserMenuPanel selectUserMenuPanel = new SelectUserMenuPanel(frame);
+        CreateBookingPanel createBookingPanel = new CreateBookingPanel(frame);
+        DeleteEditBookingPanel deleteEditBookingPanel = new DeleteEditBookingPanel(frame);
 
         // Add panels to CardLayout container
         mainPanel.add(mainMenuPanel.getMainMenuPanel(), "MainMenuPanel");
         mainPanel.add(createUserPanel.getCreateUserPanel(), "CreateUserPanel");
         mainPanel.add(deleteEditUserPanel.getDeleteEditUserPanel(), "DeleteEditUserPanel");
         mainPanel.add(selectUserPanel.getSelectUserPanel(), "SelectUserPanel");
+        mainPanel.add(selectUserMenuPanel.getSelectUserMenuPanel(), "SelectUserMenuPanel");
+        mainPanel.add(createBookingPanel.getCreateBookingPanel(), "CreateBookingPanel");
+        mainPanel.add(deleteEditBookingPanel.getDeleteEditBookingPanel(), "DeleteEditBookingPanel");
 
         // Add mainPanel to frame
         frame.setContentPane(mainPanel);

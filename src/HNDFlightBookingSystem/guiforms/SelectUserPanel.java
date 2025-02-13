@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class SelectUserPanel extends JPanel{
+public class SelectUserPanel extends JPanel {
     private JPanel selectUserPanel;
     private JButton backToMenuButton;
     private JTable selectUserTable;
@@ -52,7 +52,7 @@ public class SelectUserPanel extends JPanel{
         }
 
         selectUserTable.getColumn("Actions").setCellRenderer(new TableUtil.ButtonRenderer());
-        selectUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel));
+        selectUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Select"));
     }
 
     public JPanel getSelectUserPanel() {

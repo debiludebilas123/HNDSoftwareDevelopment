@@ -39,7 +39,7 @@ public class DeleteEditUserPanel extends JPanel {
 
     private void addActionButtons(DefaultTableModel tableModel) {
         deleteEditUserTable.getColumn("Actions").setCellRenderer(new TableUtil.ButtonRenderer());
-        deleteEditUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel));
+        deleteEditUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Edit/Delete"));
     }
 
     private void loadCSVData() {
@@ -64,7 +64,7 @@ public class DeleteEditUserPanel extends JPanel {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("customers.csv"))) {
             for (int row = 0; row < tableModel.getRowCount(); row++) {
                 StringBuilder sb = new StringBuilder();
-                for (int col = 1; col < tableModel.getColumnCount() - 1; col++) {
+                for (int col = 0; col < tableModel.getColumnCount() - 1; col++) {
                     sb.append(tableModel.getValueAt(row, col));
                     if (col < tableModel.getColumnCount() - 2) {
                         sb.append(",");
