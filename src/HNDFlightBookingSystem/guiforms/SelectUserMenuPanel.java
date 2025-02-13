@@ -7,6 +7,8 @@ public class SelectUserMenuPanel {
     private JButton deleteEditBookingButton;
     private JLabel SystemLabel;
     private JPanel selectUserMenuPanel;
+    private JButton backToMenuButton;
+    private JLabel selectUserMenuSpecifiedUserLabel;
     private JFrame frame;
 
     public SelectUserMenuPanel(JFrame frame) {
@@ -15,5 +17,9 @@ public class SelectUserMenuPanel {
 
     public JPanel getSelectUserMenuPanel() {
         return selectUserMenuPanel;
+    }
+
+    public JLabel getSelectUserMenuSpecifiedUserLabel() {
+        return selectUserMenuSpecifiedUserLabel;
     }
 }
