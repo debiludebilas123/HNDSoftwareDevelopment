@@ -11,9 +11,11 @@ public class SelectUserPanel extends JPanel {
     private JButton backToMenuButton;
     private JTable selectUserTable;
     private JFrame frame;
+    private SelectUserMenuPanel selectUserMenuPanel;
 
-    public SelectUserPanel(JFrame frame) {
+    public SelectUserPanel(JFrame frame, SelectUserMenuPanel selectUserMenuPanel) {
         this.frame = frame;
+        this.selectUserMenuPanel = selectUserMenuPanel;
 
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("Customer ID");
@@ -25,7 +27,7 @@ public class SelectUserPanel extends JPanel {
 
         loadDataIntoTable();
         addSelectButtonColumn(tableModel);
-        backToMenuButton.addActionListener(e -> PanelSwitcher.switchPanel(selectUserPanel, "MainMenuPanel", frame, 540, 140));
+        backToMenuButton.addActionListener(e -> PanelSwitcher.switchPanel(selectUserPanel, "MainMenuPanel", frame, 570, 160));
     }
 
     private void loadDataIntoTable() {
@@ -52,7 +54,7 @@ public class SelectUserPanel extends JPanel {
         }
 
         selectUserTable.getColumn("Actions").setCellRenderer(new TableUtil.ButtonRenderer());
-        selectUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Select"));
+        selectUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Select", selectUserMenuPanel));
     }
 
     public JPanel getSelectUserPanel() {

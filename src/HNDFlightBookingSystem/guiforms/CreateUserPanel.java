@@ -31,12 +31,13 @@ public class CreateUserPanel {
         backToMenuButton.addActionListener(e -> PanelSwitcher.switchPanel(createUserPanel, "MainMenuPanel", frame, 540, 140));
         createUserButton.addActionListener(e -> {
             Customer customer = createCustomer();
+            JOptionPane.showMessageDialog(this.getCreateUserPanel(), "You have successfully made a user.", "Success", JOptionPane.INFORMATION_MESSAGE);
+
             // Adding/saving the customer into table and csv file
-            if (customer != null) {
-                addCustomerToTable(customer);
-                saveCustomerToCSV(customer);
-                clearInputFields();
-            }
+            assert customer != null;
+            addCustomerToTable(customer);
+            saveCustomerToCSV(customer);
+            clearInputFields();
         });
     }
 
@@ -88,7 +89,7 @@ public class CreateUserPanel {
 
     // Generates a customerID automatically by making sure it's not duplicate using the edit/delete table data
     private String generateCustomerID() {
-        String prefix = "GR";
+        String prefix = "CUST-";
         int nextNumber = 1;
 
         DefaultTableModel tableModel = (DefaultTableModel) customerTable.getModel();
@@ -132,8 +133,8 @@ public class CreateUserPanel {
                     customer.getPhone(),
                     customer.getAddress(),
                     "\n"
-                    ));
-            } catch (IOException e) {
+            ));
+        } catch (IOException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this.getCreateUserPanel(), "Error while saving customer to CSV file", "Error", JOptionPane.ERROR_MESSAGE);
         }

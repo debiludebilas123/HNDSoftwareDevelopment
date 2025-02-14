@@ -10,7 +10,7 @@ public class main {
         // Create the frame
         JFrame frame = new JFrame("Flight Booking System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(540, 140);  // Set initial size
+        frame.setSize(570, 160);  // Set initial size
         frame.setLocationRelativeTo(null);
 
         // Create a JPanel with CardLayout
@@ -21,10 +21,10 @@ public class main {
         MainMenuPanel mainMenuPanel = new MainMenuPanel(frame);
         DeleteEditUserPanel deleteEditUserPanel = new DeleteEditUserPanel(frame);
         CreateUserPanel createUserPanel = new CreateUserPanel(frame, deleteEditUserPanel.getDeleteEditUserTable());
-        SelectUserPanel selectUserPanel = new SelectUserPanel(frame);
         SelectUserMenuPanel selectUserMenuPanel = new SelectUserMenuPanel(frame);
-        CreateBookingPanel createBookingPanel = new CreateBookingPanel(frame);
+        SelectUserPanel selectUserPanel = new SelectUserPanel(frame, selectUserMenuPanel);
         DeleteEditBookingPanel deleteEditBookingPanel = new DeleteEditBookingPanel(frame);
+        CreateBookingPanel createBookingPanel = new CreateBookingPanel(frame, deleteEditBookingPanel.getDeleteEditBookingTable());
 
         // Add panels to CardLayout container
         mainPanel.add(mainMenuPanel.getMainMenuPanel(), "MainMenuPanel");

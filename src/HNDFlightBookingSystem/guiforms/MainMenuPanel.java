@@ -14,7 +14,6 @@ public class MainMenuPanel {
 
     public MainMenuPanel(JFrame frame) {
         this.frame = frame;
-        //Lambda expressions for switching panels
         createNewUserButton.addActionListener(e -> PanelSwitcher.switchPanel(mainMenuPanel, "CreateUserPanel", frame, 400, 370));
         deleteEditUserButton.addActionListener(e -> PanelSwitcher.switchPanel(mainMenuPanel, "DeleteEditUserPanel", frame, 850, 800));
         selectUserButton.addActionListener(e -> PanelSwitcher.switchPanel(mainMenuPanel, "SelectUserPanel", frame, 850, 800));

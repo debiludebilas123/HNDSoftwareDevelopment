@@ -13,6 +13,10 @@ public class SelectUserMenuPanel {
 
     public SelectUserMenuPanel(JFrame frame) {
         this.frame = frame;
+
+        createBookingButton.addActionListener(e -> PanelSwitcher.switchPanel(selectUserMenuPanel, "CreateBookingPanel", frame, 400, 570));
+        deleteEditBookingButton.addActionListener(e -> PanelSwitcher.switchPanel(selectUserMenuPanel, "DeleteEditBookingPanel", frame, 1500, 800));
+        backToMenuButton.addActionListener(e -> PanelSwitcher.switchPanel(selectUserMenuPanel, "MainMenuPanel", frame, 540, 140));
     }
 
     public JPanel getSelectUserMenuPanel() {

@@ -6,9 +6,6 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class TableUtil {
     public static class ButtonRenderer extends JButton implements TableCellRenderer {
@@ -16,8 +13,7 @@ public class TableUtil {
             setOpaque(true);
         }
 
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-                                                       boolean hasFocus, int row, int column) {
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             setText((value == null) ? "" : value.toString());
             return this;
         }
@@ -30,6 +26,21 @@ public class TableUtil {
         private JTable table;
         private DefaultTableModel tableModel;
         private String mode;
+        private SelectUserMenuPanel selectUserMenuPanel;
+
+        public ButtonEditor(JCheckBox checkBox, DefaultTableModel tableModel, String mode, SelectUserMenuPanel selectUserMenuPanel) {
+            super(checkBox);
+            this.tableModel = tableModel;
+            this.mode = mode;
+            this.selectUserMenuPanel = selectUserMenuPanel;
+            button = new JButton();
+            button.setOpaque(true);
+            button.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    fireEditingStopped();
+                }
+            });
+        }
 
         public ButtonEditor(JCheckBox checkBox, DefaultTableModel tableModel, String mode) {
             super(checkBox);
@@ -57,6 +68,12 @@ public class TableUtil {
                 // Handle button click action here
                 int selectedRow = table.getEditingRow();
                 if ("Select".equals(mode)) {
+                    String customerId = (String) tableModel.getValueAt(selectedRow, 0);
+                    String forename = (String) tableModel.getValueAt(selectedRow, 1);
+                    String surname = (String) tableModel.getValueAt(selectedRow, 2);
+
+                    selectUserMenuPanel.getSelectUserMenuSpecifiedUserLabel().setText("<html>↓ Managing bookings of user ↓<br>Customer ID: " + customerId +
+                                                                                      "<br>Forename: " + forename + "<br>Surname: " + surname + "</html>");
                     // Find the parent JPanel with CardLayout
                     Container parent = table.getParent();
                     while (parent != null && !(parent instanceof JPanel)) {
@@ -65,7 +82,7 @@ public class TableUtil {
 
                     if (parent != null) {
                         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(table);
-                        PanelSwitcher.switchPanel((JPanel) parent, "SelectUserMenuPanel", frame, 500, 200);
+                        PanelSwitcher.switchPanel((JPanel) parent, "SelectUserMenuPanel", frame, 500, 320);
                     } else {
                         System.err.println("Parent JPanel not found!");
                     }
@@ -75,7 +92,6 @@ public class TableUtil {
                             "Edit/Delete Customer", JOptionPane.DEFAULT_OPTION,
                             JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
                     if (choice == 0) {
-                        String customerID = (String) tableModel.getValueAt(selectedRow, 0);
                         String forename = (String) tableModel.getValueAt(selectedRow, 1);
                         String surname = (String) tableModel.getValueAt(selectedRow, 2);
                         String email = (String) tableModel.getValueAt(selectedRow, 3);
