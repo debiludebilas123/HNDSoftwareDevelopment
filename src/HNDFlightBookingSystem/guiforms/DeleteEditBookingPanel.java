@@ -2,9 +2,7 @@ package HNDFlightBookingSystem.guiforms;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +22,7 @@ public class DeleteEditBookingPanel extends JPanel {
         loadCSVData();
 
         backToMenuButton.addActionListener(e -> PanelSwitcher.switchPanel(deleteEditBookingPanel, "SelectUserMenuPanel", frame, 500, 320));
+        saveChangesButton.addActionListener(e -> saveChangesToCSV());
     }
 
     private void setupTableModel() {
@@ -112,6 +111,49 @@ public class DeleteEditBookingPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "Error while reading " + filePath, "Error", JOptionPane.ERROR_MESSAGE);
         }
         return data;
+    }
+
+    private void saveChangesToCSV() {
+        DefaultTableModel tableModel = (DefaultTableModel) deleteEditBookingTable.getModel();
+
+        String[][] filesAndRanges = {
+                {"booking.csv", "0-2"},
+                {"flight.csv", "2-10"},
+                {"route.csv", "10-12"},
+        };
+
+        for (String[] fileData : filesAndRanges) {
+            String fileName = fileData[0];
+            String[] range = fileData[1].split("-");
+            int startCol = Integer.parseInt(range[0]);
+            int endCol = Integer.parseInt(range[1]);
+
+            if (!writeToCSV(fileName, tableModel, startCol, endCol)) {
+                JOptionPane.showMessageDialog(this, "Error while saving to " + fileName, "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(this, "Changes saved successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private boolean writeToCSV(String filePath, DefaultTableModel tableModel, int startCol, int endCol) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
+            for (int row = 0; row < tableModel.getRowCount(); row++) {
+                StringBuilder sb = new StringBuilder();
+                for (int col = startCol; col < endCol; col++) {
+                    sb.append(tableModel.getValueAt(row, col));
+                    if (col < endCol - 1) {
+                        sb.append(",");
+                    }
+                }
+                bw.write(sb.toString());
+                bw.newLine();
+            }
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public JPanel getDeleteEditBookingPanel() {
