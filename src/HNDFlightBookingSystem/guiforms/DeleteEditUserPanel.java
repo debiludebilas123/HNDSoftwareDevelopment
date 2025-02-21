@@ -39,7 +39,7 @@ public class DeleteEditUserPanel extends JPanel {
 
     private void addActionButtons(DefaultTableModel tableModel) {
         deleteEditUserTable.getColumn("Actions").setCellRenderer(new TableUtil.ButtonRenderer());
-        deleteEditUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Edit/Delete"));
+        deleteEditUserTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Edit/Delete", "User"));
     }
 
     private void loadCSVData() {

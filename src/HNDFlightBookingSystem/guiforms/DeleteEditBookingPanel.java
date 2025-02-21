@@ -47,7 +47,7 @@ public class DeleteEditBookingPanel extends JPanel {
 
     private void addActionButtons(DefaultTableModel tableModel) {
         deleteEditBookingTable.getColumn("Actions").setCellRenderer(new TableUtil.ButtonRenderer());
-        deleteEditBookingTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Edit/Delete"));
+        deleteEditBookingTable.getColumn("Actions").setCellEditor(new TableUtil.ButtonEditor(new JCheckBox(), tableModel, "Edit/Delete","Booking"));
     }
 
     private void loadCSVData() {
@@ -75,7 +75,7 @@ public class DeleteEditBookingPanel extends JPanel {
             // Ensure each row has the expected number of columns
             if (bookingRow.length >= 2 && flightRow.length >= 8 && routeRow.length >= 2) {
                 // Combine data into a single row
-                Object[] row = new Object[12];
+                Object[] row = new Object[13];
                 row[0] = bookingRow[0]; // Booking ID
                 row[1] = bookingRow[1]; // Booking Date
                 row[2] = flightRow[0];  // Flight ID
@@ -88,6 +88,7 @@ public class DeleteEditBookingPanel extends JPanel {
                 row[9] = flightRow[7];  // Arrival Time
                 row[10] = routeRow[0];  // Route ID
                 row[11] = routeRow[1];  // Route Name
+                row[12] = "Edit/Delete";
 
                 // Add the row to the table
                 tableModel.addRow(row);
