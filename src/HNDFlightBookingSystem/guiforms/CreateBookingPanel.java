@@ -1,12 +1,13 @@
 package HNDFlightBookingSystem.guiforms;
 
 import HNDFlightBookingSystem.classes.Booking;
-import HNDFlightBookingSystem.classes.Customer;
 import HNDFlightBookingSystem.classes.Flight;
 import HNDFlightBookingSystem.classes.Route;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,23 +17,24 @@ import java.time.format.DateTimeFormatter;
 
 public class CreateBookingPanel {
     private JButton menuButton;
-    private JTextField cBRouteInput;
     private JPanel createBookingPanel;
     private JTextField cBDepartureTimeInput;
     private JTextField cBDepartureDateInput;
-    private JTextField cBArrivalAirportInput;
-    private JTextField cBDepartureAirportInput;
     private JButton cBButton;
     private JTextField cBDateInput;
     private JTextField cBFlightNumInput;
     private JTextField cBArrivalDateInput;
     private JTextField cBArrivalTimeInput;
+    private JComboBox<String> cBDepartureComboBox;
+    private JComboBox<String> cBArrivalComboBox;
+    private JLabel cBRouteLabel;
     private JFrame frame;
     private JTable bookingTable;
 
     public CreateBookingPanel(JFrame frame, JTable bookingTable) {
         this.frame = frame;
         this.bookingTable = bookingTable;
+        fillComboBox();
 
         menuButton.addActionListener(e -> PanelSwitcher.switchPanel(createBookingPanel, "SelectUserMenuPanel", frame, 500, 320));
         cBButton.addActionListener(e -> {
@@ -48,6 +50,44 @@ public class CreateBookingPanel {
 
             clearInputFields();
         });
+    }
+
+    private void fillComboBox() {
+        String[] arriving = {"IBZ","LHR","EDI","CHQ","MAN","ARN","LAX","GLA","LIS","DUB"};
+        String[] departing = {"ATH","MNX","VNO","SAW","NAP","STN","HEL","BRS","BFS","LGW"};
+
+        for (String option : arriving) {
+            cBArrivalComboBox.addItem(option);
+        }
+
+        for (String option : departing) {
+            cBDepartureComboBox.addItem(option);
+        }
+
+        cBArrivalComboBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    updateLabel();
+                }
+            }
+        });
+
+        cBDepartureComboBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    updateLabel();
+                }
+            }
+        });
+    }
+
+    public void updateLabel() {
+        String value1 = (String) cBDepartureComboBox.getSelectedItem();
+        String value2 = (String) cBArrivalComboBox.getSelectedItem();
+
+        cBRouteLabel.setText("Selected Route: " + value1 + " - " + value2);
     }
 
     private void addAllToTable(Booking booking, Flight flight, Route route) {
@@ -72,12 +112,17 @@ public class CreateBookingPanel {
         String bookingID = generateIDs("booking");
         LocalDate bookingDate = LocalDate.parse(cBDateInput.getText());
 
+        if (cBDateInput.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(frame, "Please fill all the required fields.", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+
         return new Booking(bookingID, bookingDate);
     }
 
     private Route createRoute() {
         String routeID = generateIDs("route");
-        String routeName = cBRouteInput.getText();
+        String routeName = cBDepartureComboBox.getSelectedItem() + " - " + cBArrivalComboBox.getSelectedItem();
 
         return new Route(routeID, routeName);
     }
@@ -85,29 +130,37 @@ public class CreateBookingPanel {
     private Flight createFlight() {
         String flightID = generateIDs("flight");
         String flightNum = cBFlightNumInput.getText();
-        String departureAirport = cBDepartureAirportInput.getText();
-        String arrivalAirport = cBArrivalAirportInput.getText();
+        String departureAirport = (String) cBDepartureComboBox.getSelectedItem();
+        String arrivalAirport = (String) cBArrivalComboBox.getSelectedItem();
         LocalDate departureDate = LocalDate.parse(cBDepartureDateInput.getText());
         LocalTime departureTime = LocalTime.parse(cBDepartureTimeInput.getText());
         LocalDate arrivalDate = LocalDate.parse(cBArrivalDateInput.getText());
         LocalTime arrivalTime = LocalTime.parse(cBArrivalTimeInput.getText());
 
+        if  (flightNum.isEmpty() || cBDepartureDateInput.getText().isEmpty() || cBDepartureTimeInput.getText().isEmpty() ||
+             cBArrivalDateInput.getText().isEmpty() || cBArrivalTimeInput.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(frame, "Please fill all the required fields.", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+
         return new Flight(flightID, flightNum, departureAirport, arrivalAirport, departureDate, departureTime, arrivalDate, arrivalTime);
     }
 
-    private String generateID(String prefix) {
+    private String generateID(String prefix, int columnIndex) {
         int nextNumber = 1;
 
         DefaultTableModel tableModel = (DefaultTableModel) bookingTable.getModel();
         for (int row = 0; row < tableModel.getRowCount(); row++) {
-            String existingID = (String) tableModel.getValueAt(row, 0);
-            if (existingID.startsWith(prefix)) {
+            String existingID1 = (String) tableModel.getValueAt(row, columnIndex);
+
+            if (existingID1.startsWith(prefix)) {
                 try {
-                    int existingNumber = Integer.parseInt(existingID.substring(prefix.length()));
+                    int existingNumber = Integer.parseInt(existingID1.substring(prefix.length()));
                     if (existingNumber >= nextNumber) {
                         nextNumber = existingNumber + 1;
                     }
                 } catch (NumberFormatException _) {
+
                 }
             }
         }
@@ -118,13 +171,13 @@ public class CreateBookingPanel {
     private String generateIDs(String type) {
         switch (type) {
             case "booking" -> {
-                return generateID("BK-");
+                return generateID("BK-",0);
             }
             case "route" -> {
-                return generateID("RT-");
+                return generateID("RT-",10);
             }
             case "flight" -> {
-                return generateID("FL-");
+                return generateID("FL-",2);
             }
         }
         return null;
@@ -181,9 +234,6 @@ public class CreateBookingPanel {
     }
 
     private void clearInputFields() {
-        cBRouteInput.setText("");
-        cBDepartureAirportInput.setText("");
-        cBArrivalAirportInput.setText("");
         cBDepartureDateInput.setText("");
         cBDepartureTimeInput.setText("");
         cBArrivalDateInput.setText("");

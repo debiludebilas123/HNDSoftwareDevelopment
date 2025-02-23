@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="createBookingPanel" layout-manager="GridLayoutManager" row-count="21" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="678"/>
+      <xy x="20" y="20" width="500" height="684"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -22,39 +22,17 @@
           <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Back To Menu"/>
         </properties>
       </component>
-      <component id="18e6a" class="javax.swing.JLabel">
+      <component id="fee75" class="javax.swing.JLabel">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Route"/>
-        </properties>
-      </component>
-      <component id="8a328" class="javax.swing.JTextField" binding="cBRouteInput">
-        <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="fee75" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
+          <font style="1"/>
           <text value="Departure Airport"/>
-        </properties>
-      </component>
-      <component id="43e86" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Arrival Airport"/>
         </properties>
       </component>
       <component id="de485" class="javax.swing.JLabel">
@@ -62,6 +40,7 @@
           <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Departure Date YYYY-MM-DD"/>
         </properties>
       </component>
@@ -70,24 +49,9 @@
           <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Departure Time HH:MM"/>
         </properties>
-      </component>
-      <component id="4e0c9" class="javax.swing.JTextField" binding="cBDepartureAirportInput">
-        <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="689" class="javax.swing.JTextField" binding="cBArrivalAirportInput">
-        <constraints>
-          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
       </component>
       <component id="273db" class="javax.swing.JTextField" binding="cBDepartureDateInput">
         <constraints>
@@ -110,6 +74,7 @@
           <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Create Booking"/>
         </properties>
       </component>
@@ -118,6 +83,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Booking Date YYYY-MM-DD"/>
         </properties>
       </component>
@@ -134,6 +100,7 @@
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Flight Number"/>
         </properties>
       </component>
@@ -150,6 +117,7 @@
           <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Arrival Date YYYY-MM-DD"/>
         </properties>
       </component>
@@ -166,6 +134,7 @@
           <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font style="1"/>
           <text value="Arrival Time HH:MM"/>
         </properties>
       </component>
@@ -176,6 +145,44 @@
           </grid>
         </constraints>
         <properties/>
+      </component>
+      <component id="18e6a" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font style="1"/>
+          <text value="Route"/>
+        </properties>
+      </component>
+      <component id="8a189" class="javax.swing.JLabel" binding="cBRouteLabel">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Selected Route: "/>
+        </properties>
+      </component>
+      <component id="5baf8" class="javax.swing.JComboBox" binding="cBDepartureComboBox">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="5dcf9" class="javax.swing.JComboBox" binding="cBArrivalComboBox">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="43e86" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font style="1"/>
+          <text value="Arrival Airport"/>
+        </properties>
       </component>
     </children>
   </grid>
