@@ -3,26 +3,22 @@ package HNDHospitalSystemAssessment.GUI;
 import javax.swing.*;
 
 public class VisitManagement {
-    private JTextField patientIDInput;
-    private JCheckBox insuredPatientCheckBox;
-    private JButton addPatientButton;
+    private JTextField dovInput;
+    private JButton addVisitButton;
     private JPanel visitManagementPanel;
-    private JTable patientManagementTable;
-    private JTextField firstNameInput;
-    private JTextField surnameInput;
-    private JTextField addressInput;
-    private JTextField postcodeInput;
-    private JTextField phoneInput;
-    private JTextField emailInput;
-    private JTextField insuranceCompanyInput;
-    private JTextField insuranceTypeInput;
-    private JTextField durationInput;
-    private JButton editPatientButton;
-    private JButton emailButton;
-    private JScrollPane patientManagementScrollPane;
+    private JTable visitManagementTable;
+    private JTextField symptomsInput;
+    private JTextField diagnosisInput;
+    private JButton editVisitButton;
+    private JButton deleteVisitButton;
+    private JScrollPane visitManagementScrollPane;
     private JFrame frame;
 
     public VisitManagement(JFrame frame) {
         this.frame = frame;
+    }
+
+    public JPanel getVisitManagementPanel() {
+        return visitManagementPanel;
     }
 }

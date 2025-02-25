@@ -230,7 +230,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Delete"/>
+          <text value="Delete Patient"/>
         </properties>
       </component>
       <component id="dea2d" class="javax.swing.JLabel">
